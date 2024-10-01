@@ -1,15 +1,24 @@
 function fibonacci(num) {
-    if (num === 0) return 0; // Base case for num = 0
-    if (num === 1) return 1; // Base case for num = 1
+    // Handle edge cases
+    if (num === 1) {
+        return 0;
+    } else if (num === 2) {
+        return 1;
+    }
 
+    // Initialize the first two Fibonacci numbers
     let a = 0, b = 1;
-    
-    for (let i = 2; i <= num; i++) {
+
+    // Calculate Fibonacci numbers up to the given num
+    for (let i = 2; i < num; i++) {
         let next = a + b;
         a = b;
         b = next;
     }
-    
+
     return b;
 }
+
+
+
 module.exports = fibonacci;
